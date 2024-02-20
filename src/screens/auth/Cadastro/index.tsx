@@ -11,13 +11,31 @@ import { Button } from '@components/auth/Button';
 import { Title } from '@components/auth/Title';
 import { OtherAuthentications } from '@components/auth/OtherAuthentications';
 import { AuthRoutesParamList } from '@routes/auth.routes';
+import { useAuth } from '@contexts/authProvider';
+import { useState } from 'react';
+import { Alert } from 'react-native';
 
 export function Cadastro() {
   const { goBack, navigate } = useNavigation<NavigationProp<AuthRoutesParamList>>();
   const { bottom } = useSafeAreaInsets();
 
+  const { register } = useAuth();
+
+  const [ email, setEmail ] = useState('');
+  const [ password, setPassword ] = useState('');
+  const [ school, setSchool ] = useState('');
+  
   function handleGoBack() {
     goBack();
+  }
+
+  function handleRegister() {
+    if(email.trim() && password.trim() && school.trim()) {
+      const result = register({ email, password, school });
+      Alert.alert(result.type === 'sucess' ? 'Concluido' : 'Ocorreu um erro', result.message);
+    } else {
+      Alert.alert('Preencha os campos', 'Todos os campos são obrigatórios');
+    }
   }
   
   return (
@@ -30,19 +48,19 @@ export function Cadastro() {
       <Title text='Criar conta' />
 
       <Form paddinBottom={bottom}>
-        <Textfield label='Email' placeholder='Digite seu email' />
-        <Textfield label='Escola' placeholder='Digite o nome da sua escola' />
-        <Textfield label='Senha' placeholder='Digite sua senha' />
+        <Textfield label='Email' placeholder='Digite seu email' value={email} onChangeText={setEmail} />
+        <Textfield label='Escola' placeholder='Digite o nome da sua escola' value={school} onChangeText={setSchool} />
+        <Textfield label='Senha' placeholder='Digite sua senha' value={password} onChangeText={setPassword} />
         
-        <Button text='Entrar' />
+        <Button text='Entrar' onPress={handleRegister} />
 
         <RedirectToCadastro onPress={() => navigate('login')}>
           <Typography color='white'>
-          Já possui uma conta? <Span color='white'>Entrar</Span>
+            Já possui uma conta? <Span color='white'>Entrar</Span>
           </Typography>
         </RedirectToCadastro>
         
-        <OtherAuthentications />
+        <OtherAuthentications isRegister />
       </Form>
     </Background02>
   )

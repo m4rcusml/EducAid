@@ -14,10 +14,13 @@ import { CaretRight } from 'phosphor-react-native';
 import EducAid from '@assets/logo.svg';
 import Studying from '@assets/studying.svg';
 import FirstAidKit from '@assets/first-aid-kit.svg';
+import { useAuth } from '@contexts/authProvider';
 
 export function Apresentacao() {
   const { navigate } = useNavigation<NavigationProp<AuthRoutesParamList>>();
   const { width } = useWindowDimensions();
+
+  const { logAsVisitant } = useAuth();
 
   const carouselRef = useRef<ScrollView>(null);
   
@@ -70,7 +73,7 @@ export function Apresentacao() {
             <ButtonsContainer>
               <Button text='Entrar' onPress={() => navigate('login')} />
               <Button text='Não possui conta? Cadastrar-se' size='large' backgroundColor='royalBlue' onPress={() => navigate('cadastro')} />
-              <Touchable style={{ alignSelf: 'center' }}>
+              <Touchable style={{ alignSelf: 'center' }} onPress={logAsVisitant}>
                 <Typography color='white' children='Continuar como visitante' />
               </Touchable>
             </ButtonsContainer>

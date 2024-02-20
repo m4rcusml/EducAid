@@ -11,10 +11,23 @@ import { Button } from '@components/auth/Button';
 import { Title } from '@components/auth/Title';
 import { OtherAuthentications } from '@components/auth/OtherAuthentications';
 import { AuthRoutesParamList } from '@routes/auth.routes';
+import { useState } from 'react';
+import { useAuth } from '@contexts/authProvider';
+import { Alert } from 'react-native';
 
 export function Login() {
   const { goBack, navigate } = useNavigation<NavigationProp<AuthRoutesParamList>>();
   const { bottom } = useSafeAreaInsets();
+
+  const { login } = useAuth();
+
+  const [ email, setEmail ] = useState('');
+  const [ password, setPassword ] = useState('');
+  
+  function handleLogin() {
+    const result = login({ email, password });
+    Alert.alert(result.type === 'sucess' ? 'Concluido' : 'Ocorreu um erro', result.message);
+  }
   
   return (
     <Background02>
@@ -26,15 +39,15 @@ export function Login() {
       <Title text='  Log In' />
 
       <Form paddinBottom={bottom}>
-        <Textfield label='Email' placeholder='Digite seu email' />
-        <Textfield label='Senha' placeholder='Digite sua senha' />
+        <Textfield label='Email' placeholder='Digite seu email' value={email} onChangeText={setEmail} />
+        <Textfield label='Senha' placeholder='Digite sua senha' value={password} onChangeText={setPassword} secureTextEntry />
 
         <ForgotPassword onPress={() => navigate('recuperar_senha')}>
           <Key color='white' size={20} />
           <Typography children='Esqueci minha senha' color='white' />
         </ForgotPassword>
         
-        <Button text='Entrar' />
+        <Button text='Entrar' onPress={handleLogin} />
 
         <RedirectToCadastro onPress={() => navigate('cadastro')}>
           <Typography color='white'>

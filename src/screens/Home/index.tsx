@@ -1,10 +1,10 @@
 import { Typography } from '@components/Typography';
-import { Background02 } from '@components/backgrounds/Background02';
+import { Background03 } from '@components/backgrounds/Background03';
 
 export function Home() {
   return (
-    <Background02 dontShowPurpleHeart>
-      <Typography>Home</Typography>
-    </Background02>
+    <Background03>
+      
+    </Background03>
   )
 }
