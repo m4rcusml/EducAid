@@ -15,7 +15,7 @@ export function Home() {
         <Typography color='white' size='xxLarge' weight='semiBold'>Olá, {user?.username}!</Typography>
         <Typography color='white' weight='light'>Que tal praticar hoje?</Typography>
       </Header>
-      <ScrollView style={{ marginTop: 30 }} contentContainerStyle={{ marginHorizontal: 24, gap: 20 }}>
+      <ScrollView style={{ marginTop: 30 }} contentContainerStyle={{ marginHorizontal: 24, gap: 20, paddingBottom: 30 }}>
         <AulaButton 
           progress={10}
           title='Engasgo'

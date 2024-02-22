@@ -32,7 +32,10 @@ export function Cadastro() {
   function handleRegister() {
     if(email.trim() && password.trim() && school.trim()) {
       const result = register({ email, password, school });
-      Alert.alert(result.type === 'sucess' ? 'Concluido' : 'Ocorreu um erro', result.message);
+      Alert.alert(result.type === 'sucess' ? 'Concluido' : 'Ocorreu um erro', result.message, [{
+        text: 'Ok',
+        onPress: () => result.type === 'sucess' && goBack()
+      }] );
     } else {
       Alert.alert('Preencha os campos', 'Todos os campos são obrigatórios');
     }

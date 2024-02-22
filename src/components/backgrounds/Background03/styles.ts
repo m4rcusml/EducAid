@@ -13,6 +13,6 @@ export const CoracaoAoMeio = styled(CoracaoAoMeioSVG).attrs(() => ({
   width: '100%'
 }))<{windowHeight: number}>`
   position: absolute;
-  top: ${({ windowHeight }) => windowHeight * 0.06}px;
+  top: ${({ windowHeight }) => windowHeight * 0.05}px;
   left: -8%;
 `;

@@ -29,7 +29,7 @@ export default function HomeRoutes() {
         component={Home}
         options={{
           title: 'Início',
-          tabBarIcon: ({ color, size }) => <HouseSimple color={color} size={size} />
+          tabBarIcon: ({ color, size }) => <HouseSimple color={color} size={size} weight='bold' />
         }}
       />
       <Tab.Screen
@@ -37,7 +37,7 @@ export default function HomeRoutes() {
         component={Home}
         options={{
           title: 'Ranking',
-          tabBarIcon: ({ color, size }) => <MedalMilitary color={color} size={size} />
+          tabBarIcon: ({ color, size }) => <MedalMilitary color={color} size={size} weight='bold' />
         }}
       />
       <Tab.Screen
@@ -45,7 +45,7 @@ export default function HomeRoutes() {
         component={Aulas}
         options={{
           title: 'Aulas',
-          tabBarIcon: ({ color, size }) => <GraduationCap color={color} size={size} />
+          tabBarIcon: ({ color, size }) => <GraduationCap color={color} size={size} weight='bold' />
         }}
       />
       <Tab.Screen
@@ -53,7 +53,7 @@ export default function HomeRoutes() {
         component={Home}
         options={{
           title: 'Quizzes',
-          tabBarIcon: ({ color, size }) => <PencilLine color={color} size={size} />
+          tabBarIcon: ({ color, size }) => <PencilLine color={color} size={size} weight='bold' />
         }}
       />
     </Tab.Navigator>

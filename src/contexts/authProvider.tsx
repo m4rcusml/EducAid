@@ -6,6 +6,7 @@ type UserTypes = 'visitante' | 'normal' | 'fromGoogle' | null;
 type UserDataType = {
   userType: UserTypes;
   username?: string;
+  picture?: string;
   email?: string;
   password?: string;
   school?: string;
