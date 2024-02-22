@@ -1,16 +1,17 @@
 import { ViewProps, useWindowDimensions } from "react-native";
-import { Container, CoracaoAoMeio } from "./styles";
+import { Container, CirculoRoxo, CoracaoVermelhoPequeno } from "./styles";
 
 type Props = ViewProps & { 
   children?: React.JSX.Element | React.JSX.Element[],
 }
 
-export function Background03({ children, ...rest }: Props) {
+export function Background04({ children, ...rest }: Props) {
   const { height } = useWindowDimensions();
   
   return (
     <Container {...rest}>
-      <CoracaoAoMeio windowHeight={height} />
+      <CirculoRoxo />
+      <CoracaoVermelhoPequeno windowHeight={height} />
       {children}
     </Container>
   )

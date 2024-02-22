@@ -19,7 +19,7 @@ import { NextButton } from '../Apresentacao/styles';
 export function RecuperarSenha() {
   const [ currentIndex, setCurrentIndex ] = useState(0);
   const { goBack } = useNavigation<NavigationProp<AuthRoutesParamList>>();
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
   const carouselRef = useRef<ScrollView>(null);
 
   function handleGoBack() {
@@ -75,7 +75,7 @@ export function RecuperarSenha() {
         <Form width={width} style={{ marginTop: '5%' }}>
           <Textfield label='Código' placeholder='Digite o código enviado no seu email' color='black' translucent />
 
-          <NextButton onPress={handleGoNext}>
+          <NextButton onPress={handleGoNext} windowHeight={height}>
             <Typography children='Próximo' />
             <CaretRight />
           </NextButton>

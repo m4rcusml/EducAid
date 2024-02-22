@@ -5,10 +5,11 @@ type UserTypes = 'visitante' | 'normal' | 'fromGoogle' | null;
 
 type UserDataType = {
   userType: UserTypes;
+  username?: string;
   email?: string;
   password?: string;
   school?: string;
-}
+};
 
 type ResponseType = { type: 'error' | 'sucess', message: string };
   
@@ -20,6 +21,7 @@ type AuthContextData = {
   logAsVisitant(): void;
   login({ email, password }: { email: string, password: string }): ResponseType;
   loginWithGoogle(): ResponseType;
+  logOut(): void;
 }
 
 export const AuthContext = createContext<AuthContextData>({} as AuthContextData);
@@ -30,7 +32,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
   const [ user, setUser ] = useState<UserDataType>();
   
   function logAsVisitant() {
-    setUser({userType: 'visitante'});
+    setUser({userType: 'visitante', username: 'visitante'});
   }
   
   function register({ email, password, school }: { email: string, password: string, school: string }): ResponseType {
@@ -93,6 +95,10 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     return { type: 'error', message: 'Esta conta não existe' };
   }
 
+  function logOut() {
+    setUser(undefined);
+  }
+
   return (
     <AuthContext.Provider
       value={{
@@ -102,7 +108,8 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         registerWithGoogle,
         login,
         logAsVisitant,
-        loginWithGoogle
+        loginWithGoogle,
+        logOut
       }}
     >
       {children}

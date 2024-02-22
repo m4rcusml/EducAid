@@ -4,6 +4,9 @@ import { Home } from '@screens/Home';
 
 import Logo from '@assets/logo.svg';
 import HomeRoutes from './home.routes';
+import { TouchableOpacity } from 'react-native';
+import { UserCircle } from 'phosphor-react-native';
+import { CustomDrawer } from '@components/CustomDrawer';
 
 export type AppRoutesParamList = {
   profile: undefined;
@@ -24,16 +27,18 @@ export default function AppRoutes() {
       screenOptions={{
         headerTransparent: true,
         headerTitleAlign: 'center',
-        headerTitle: () => <Logo height={120} width={150} style={{ marginTop: 20 }} />
+        headerTitle: () => <Logo height={120} width={150} style={{ marginTop: 25 }} />,
+        headerRight: () => <TouchableOpacity children={<UserCircle size={30} style={{ marginRight: 10 }} />} />,
       }}
+      drawerContent={(props) => <CustomDrawer {...props} />}
     >
       <Drawer.Screen
         name='profile'
-        component={HomeRoutes}
+        component={Home}
       />
       <Drawer.Screen
         name='home'
-        component={Home}
+        component={HomeRoutes}
       />
       <Drawer.Screen
         name='notifications'
@@ -49,10 +54,6 @@ export default function AppRoutes() {
       />
       <Drawer.Screen
         name='switchAccount'
-        component={Home}
-      />
-      <Drawer.Screen
-        name='sair'
         component={Home}
       />
     </Drawer.Navigator>

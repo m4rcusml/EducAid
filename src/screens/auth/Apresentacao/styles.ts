@@ -16,9 +16,10 @@ export const Touchable = styled.TouchableOpacity`
   align-items: center;
 `;
 
-export const NextButton = styled(Touchable)`
+export const NextButton = styled(Touchable)<{windowHeight: number}>`
   position: absolute;
   right: 16px;
+  top: ${({ windowHeight }) => windowHeight * 0.3}px;
   bottom: 32px;
 `;
 

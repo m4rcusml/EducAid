@@ -9,9 +9,10 @@ export const Container = styled(SafeAreaView)`
 `;
 
 export const CoracaoAoMeio = styled(CoracaoAoMeioSVG).attrs(() => ({
-  height: '90%',
-}))`
+  height: '96%',
+  width: '100%'
+}))<{windowHeight: number}>`
   position: absolute;
-  top: 6%;
-  left: -4%;
+  top: ${({ windowHeight }) => windowHeight * 0.06}px;
+  left: -8%;
 `;
