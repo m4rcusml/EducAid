@@ -47,14 +47,14 @@ export default function AppRoutes() {
           drawerIcon: ({ color, size }) => <House color={color} size={size} weight='bold' />
         }}
       />
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name='notifications'
         component={Home}
         options={{
           title: 'Notificações',
           drawerIcon: ({ color, size }) => <BellRinging color={color} size={size} weight='bold' />
         }}
-      />
+      /> */}
       <Drawer.Screen
         name='quemSomos'
         component={QuemSomos}
@@ -63,22 +63,22 @@ export default function AppRoutes() {
           drawerIcon: ({ color, size }) => <UsersThree color={color} size={size} weight='bold' />
         }}
       />
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name='switchAccount'
         component={Home}
         options={{
           title: 'Trocar de conta',
           drawerIcon: ({ color, size }) => <UserSwitch color={color} size={size} weight='bold' />
         }}
-      />
-      <Drawer.Screen
+      /> */}
+      {/* <Drawer.Screen
         name='settings'
         component={Home}
         options={{
           title: 'Configurações',
           drawerIcon: ({ color, size }) => <Gear color={color} size={size} weight='bold' />
         }}
-      />
+      /> */}
     </Drawer.Navigator>
   )
 }

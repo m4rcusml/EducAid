@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components/native';
 
 export type StyleProps = {
   weight?: 'light' | 'regular'| 'medium' | 'semiBold' | 'bold' | 'extraBold';
-  size?: 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge' | 'xxLarge';
+  size?: 'xxSmall' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge' | 'xxLarge';
   align?: 'left' | 'right' | 'center' | 'justify';
   color?: string;
 }

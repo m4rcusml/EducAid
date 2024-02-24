@@ -55,7 +55,7 @@ export function Cadastro() {
         <Textfield label='Escola' placeholder='Digite o nome da sua escola' value={school} onChangeText={setSchool} />
         <Textfield label='Senha' placeholder='Digite sua senha' value={password} onChangeText={setPassword} />
         
-        <Button text='Entrar' onPress={handleRegister} />
+        <Button text='Criar' onPress={handleRegister} />
 
         <RedirectToCadastro onPress={() => navigate('login')}>
           <Typography color='white'>

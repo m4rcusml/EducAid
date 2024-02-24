@@ -8,6 +8,7 @@ export default {
     extraBold: 'BeVietnamPro_800ExtraBold'
   },
   fontSize: {
+    xxSmall: '10px',
     xSmall: '12px',
     small: '14px',
     medium: '16px',

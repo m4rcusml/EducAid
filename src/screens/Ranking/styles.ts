@@ -31,3 +31,16 @@ export const MemberPhotoContainer = styled(ImageContainer)`
   width: 100px;
   height: 100px;
 `;
+
+export const RankingItemContainer = styled.View`
+  padding: 20px 30px;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+`;
+
+export const ProfileCardContainer = styled.View`
+  background-color: #6B84A8;
+  flex: 1;
+  border-radius: 10px;
+`;

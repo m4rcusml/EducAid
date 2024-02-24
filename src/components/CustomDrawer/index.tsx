@@ -10,13 +10,13 @@ import { useAuth } from '@contexts/authProvider';
 import LogoEscrita from '@assets/logo-escrita.svg';
 
 export function CustomDrawer(props: DrawerContentComponentProps) {
-  const { logOut } = useAuth();
+  const { logOut, user } = useAuth();
   
   return (
     <Container>
       <LogoEscrita width='100%' style={{ marginTop: 10, marginBottom: -75, marginLeft: 8 }} />
 
-      <ProfileCard />      
+      <ProfileCard size='meddium' onPress={user?.userType === 'visitante' ? logOut :  undefined} />      
 
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />

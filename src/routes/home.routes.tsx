@@ -6,6 +6,7 @@ import { GraduationCap, HouseSimple, MedalMilitary, PencilLine } from 'phosphor-
 import { Home } from '@screens/Home';
 import { Aulas } from '@screens/Aulas';
 import { Ranking } from '@screens/Ranking';
+import { Quizzes } from '@screens/Quizzes';
 
 const Tab = createBottomTabNavigator();
 
@@ -51,7 +52,7 @@ export default function HomeRoutes() {
       />
       <Tab.Screen
         name='quizzes'
-        component={Home}
+        component={Quizzes}
         options={{
           title: 'Quizzes',
           tabBarIcon: ({ color, size }) => <PencilLine color={color} size={size} weight='bold' />

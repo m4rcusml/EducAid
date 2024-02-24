@@ -7,9 +7,10 @@ type UserDataType = {
   userType: UserTypes;
   username?: string;
   picture?: string;
+  school?: string;
   email?: string;
   password?: string;
-  school?: string;
+  exp?: number;
 };
 
 type ResponseType = { type: 'error' | 'sucess', message: string };
@@ -41,7 +42,8 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       userType: 'normal',
       email,
       password,
-      school
+      school,
+      exp: 0
     };
 
     UsersSchema.push(user);
@@ -54,7 +56,8 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       userType: 'fromGoogle',
       email: 'email.aleatorio@gmail.com',
       password: '12345678',
-      school: 'Fundação Bradesco'
+      school: 'Fundação Bradesco',
+      exp: 0
     };
 
     UsersSchema.push(user);
