@@ -1,13 +1,15 @@
+import { TouchableOpacity } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { useTheme } from 'styled-components/native';
+
+import { BellRinging, Gear, House, UserCircle, UserSwitch, UsersThree } from 'phosphor-react-native';
+import { CustomDrawer } from '@components/CustomDrawer';
 
 import { Home } from '@screens/Home';
+import { QuemSomos } from '@screens/QuemSomos';
 
 import Logo from '@assets/logo.svg';
 import HomeRoutes from './home.routes';
-import { TouchableOpacity } from 'react-native';
-import { BellRinging, Gear, House, UserCircle, UserSwitch, UsersThree } from 'phosphor-react-native';
-import { CustomDrawer } from '@components/CustomDrawer';
-import { useTheme } from 'styled-components/native';
 
 export type AppRoutesParamList = {
   profile: undefined;
@@ -55,7 +57,7 @@ export default function AppRoutes() {
       />
       <Drawer.Screen
         name='quemSomos'
-        component={Home}
+        component={QuemSomos}
         options={{
           title: 'Quem somos',
           drawerIcon: ({ color, size }) => <UsersThree color={color} size={size} weight='bold' />

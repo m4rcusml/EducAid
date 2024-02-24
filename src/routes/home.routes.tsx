@@ -5,6 +5,7 @@ import { GraduationCap, HouseSimple, MedalMilitary, PencilLine } from 'phosphor-
 
 import { Home } from '@screens/Home';
 import { Aulas } from '@screens/Aulas';
+import { Ranking } from '@screens/Ranking';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,7 +35,7 @@ export default function HomeRoutes() {
       />
       <Tab.Screen
         name='ranking'
-        component={Home}
+        component={Ranking}
         options={{
           title: 'Ranking',
           tabBarIcon: ({ color, size }) => <MedalMilitary color={color} size={size} weight='bold' />

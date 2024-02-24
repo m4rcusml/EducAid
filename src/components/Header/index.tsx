@@ -1,8 +1,9 @@
+import { ViewProps } from 'react-native';
 import { Container } from './styles';
 
-export function Header({ children }: { children: React.ReactNode }) {
+export function Header({ children, ...rest }: ViewProps & { children: React.ReactNode }) {
   return (
-    <Container>
+    <Container {...rest}>
       {children}
     </Container>
   )
