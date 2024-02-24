@@ -21,13 +21,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1C2663"
-      }
+      },
+      "package": "com.m4rcusml.EducAid"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f5846bbc-2313-4b6c-87cc-72ef01b41c3c"
+      }
+    }
   }
 }
