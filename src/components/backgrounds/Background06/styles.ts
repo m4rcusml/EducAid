@@ -2,7 +2,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 
 import CirculoRoxoSVG from '@assets/forBackground/circulo-roxo.svg';
-import CoracaoVermelhoPequenoSVG from '@assets/forBackground/coracao-vermelho-pequeno.svg';
+import CoracaoRoxoPequenoSVG from '@assets/forBackground/coracao-roxo-pequeno.svg';
 
 export const Container = styled(SafeAreaView)`
   background-color: ${({ theme }) => theme.colors.oldLace};
@@ -15,8 +15,8 @@ export const CirculoRoxo = styled(CirculoRoxoSVG)`
   left: 0;
 `;
 
-export const CoracaoRoxoPequeno = styled(CoracaoVermelhoPequenoSVG)<{windowHeight: number}>`
+export const CoracaoRoxoPequeno = styled(CoracaoRoxoPequenoSVG)<{windowHeight: number}>`
   position: absolute;
   right: 0;
-  top: ${({ windowHeight }) => windowHeight * 0.53}px;
+  top: ${({ windowHeight }) => windowHeight * 0.7}px;
 `;

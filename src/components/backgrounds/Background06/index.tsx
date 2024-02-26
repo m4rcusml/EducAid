@@ -11,7 +11,7 @@ export function Background06({ children, ...rest }: Props) {
   return (
     <Container {...rest}>
       <CirculoRoxo />
-      <CoracaoRoxoPequeno windowHeight={height} fill={'#0000ff'} />
+      <CoracaoRoxoPequeno windowHeight={height} />
       {children}
     </Container>
   )
